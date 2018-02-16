@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appium/sample-code.git"
+    "url": "git+https://github.com/pcholuj/sample-code.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/appium/sample-code/issues"
+    "url": "https://github.com/pcholuj/sample-code/issues"
   },
-  "homepage": "https://github.com/appium/sample-code#readme",
+  "homepage": "https://github.com/pcholuj/sample-code#readme",
   "dependencies": {
     "semantic-release": "^12.4.1"
   },
