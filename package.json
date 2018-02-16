@@ -1,6 +1,6 @@
 {
   "name": "sample-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,14 +21,20 @@
   },
   "release": {
     "branch": "master",
-    "publish": [{
-      "path": "semantic-s3-release"
-    }],
-    "success": [{
-      "path": "semantic-s3-release"
-    }],
-    "verifyConditions": [{
-      "path": "semantic-s3-release"
-    }]
+    "publish": [
+      {
+        "path": "semantic-s3-release"
+      }
+    ],
+    "success": [
+      {
+        "path": "semantic-s3-release"
+      }
+    ],
+    "verifyConditions": [
+      {
+        "path": "semantic-s3-release"
+      }
+    ]
   }
 }
