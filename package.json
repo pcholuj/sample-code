@@ -23,7 +23,9 @@
     "branch": "master",
     "publish": [
       {
-        "path": "semantic-s3-release"
+        "path": "semantic-s3-release",
+        "assets": "assets/**/*",
+        "bucket": "test"
       }
     ],
     "success": [
