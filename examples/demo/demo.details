@@ -4,3 +4,4 @@ description: Some description, please keep it in one line
 normalize_css: no
 resources: 
   - https://static.filestackapi.com/v3/filestack.js
+...
