@@ -2,4 +2,6 @@
  name: The Name of the Demo
  description: Some description, please keep it in one line
  normalize_css: no
+ resources:
+    - http://static.filestackapi.com/v3/filestack-0.11.2.js
  ...
