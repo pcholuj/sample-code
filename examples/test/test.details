@@ -4,7 +4,7 @@
 name: test
 description: test
 resources:
-
+    
 normalize_css: yes
 ...
 */
