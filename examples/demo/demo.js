@@ -1,4 +1,4 @@
-window.addEvent('domready', function () {
+window.addEventListener('DOMContentLoaded', function () {
     const apikey = 'abc';
     const client = filestack.init(apikey);
     client.pick({
