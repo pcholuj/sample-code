@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
-    const apikey = 'abc';
+    const apikey = 'YOUR_APIKEY';
     const client = filestack.init(apikey);
     client.pick({
             maxFiles: 20,

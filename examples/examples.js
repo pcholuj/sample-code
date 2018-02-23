@@ -11,12 +11,14 @@ const readDir = util.promisify(fs.readdir);
 const files = {
   index: 'demo.html',
   script: 'demo.js',
-  config: 'demo.details'
+  config: 'demo.details',
+  css: 'demo.css',
 };
 
 const filesContent = {
   index: null,
   script: null,
+  css: null,
   config: null
 };
 
@@ -25,6 +27,9 @@ const template = `
     <title>{{title}}</title>
     <head>
         {{headScript}}
+        <style>
+          {{style}}
+        </style>
     </head>
     <body>
         {{content}}
@@ -49,7 +54,8 @@ app.get('/', (req, res) => {
 
   readDir(__dirname).then((results) => {
     results.forEach((val) => {
-      if (fs.statSync(path.join(__dirname, val)).isDirectory()) {
+      if (fs.statSync(path.join(__dirname, val)).isDirectory() 
+      && fs.existsSync(path.join(__dirname, val, files.config))) {
         list.push(`<li><a href="/${val}" alt="val">${val}</a></li>`)
       }
     });
@@ -76,11 +82,18 @@ app.get('/*', (req, res) => {
   });
 
   Promise.all(promises).then(() => {
+    if (!filesContent.config) {
+      res.status(404);
+      res.end();
+      return;
+    }
+
     const config = yaml.safeLoad(filesContent.config);
     let tpl = template + '';
     tpl = tpl.replace('{{title}}', config.name || '')
       .replace('{{content}}', filesContent.index)
-      .replace('{{script}}', filesContent.script);
+      .replace('{{script}}', filesContent.script)
+      .replace('{{style}}', filesContent.css || '');
 
     if (config.resources) {
       let resources = [];
